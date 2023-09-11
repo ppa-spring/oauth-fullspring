@@ -1,0 +1,26 @@
+spring:
+    security:
+        oauth2:
+            client:
+                provider:
+                    authppa:
+                        authorization-uri: "http://localhost:8083"
+                        token-uri: "http://localhost:8083/oauth/token"
+                        issuer-uri: "http://localhost:8083"
+                registration:
+                    authppa:
+                        client-name: "authppa"
+                        authorization-grant-type: "authorization_code"
+                        client-id: "client-server"
+                        client-secret: abcd0123456789
+                        provider: "authppa"
+                        redirect-uri: "http://localhost:8080/authorized"
+                        scope: "person.read"
+                    clientoidc:
+                        client-name: "clientoidc"
+                        authorization-grant-type: "authorization_code"
+                        client-id: "client-server"
+                        client-secret: abcd0123456789
+                        provider: "authppa"
+                        redirect-uri: "{baseUrl}/login/oauth2/code/{registrationId}"
+                        scope: "openid"

@@ -1,0 +1,31 @@
+server:
+  port: 8083
+
+logging:
+  level:
+    org.springframework.security: trace
+
+spring:
+  security:
+    filter:
+      order: 5
+#    oauth2:
+#      authorizationserver:
+#        client:
+#          authppa:
+#            registration:
+#              client-id: "client-server"
+#              client-secret: "{noop}abcd0123456789"
+#              client-authentication-methods:
+#                - "client_secret_basic"
+#              authorization-grant-types:
+#                - "authorization_code"
+#                - "refresh_token"
+#              redirect-uris:
+#                - "http://localhost:8080/oauth2/code/authppa"
+#              post-logout-redirect-uris:
+#                - "http://127.0.0.1:8080/"
+#              scopes:
+#                - "openid"
+#                - "profile"
+#            require-authorization-consent: true
